@@ -70,7 +70,7 @@ class note_section_accessor
         const char* pData = note_section->get_data() + note_start_positions[index];
         int align = sizeof( Elf_Word );
 
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
         type = convertor( *(Elf_Word*)( pData + 2*align ) );
         Elf_Word namesz = convertor( *(Elf_Word*)( pData ) );
         descSize = convertor( *(Elf_Word*)( pData + sizeof( namesz ) ) );
@@ -97,7 +97,7 @@ class note_section_accessor
                    const void*        desc,
                    Elf_Word           descSize )
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         int align            = sizeof( Elf_Word );
         Elf_Word nameLen     = (Elf_Word)name.size() + 1;
@@ -128,7 +128,7 @@ class note_section_accessor
 //------------------------------------------------------------------------------
     void process_section()
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
         const char* data                     = note_section->get_data();
         Elf_Xword   size                     = note_section->get_size();
         Elf_Xword   current                  = 0;

@@ -71,7 +71,7 @@ template<> struct elf_header_impl_types<Elf64_Ehdr> {
 template< class T > class elf_header_impl : public elf_header
 {
   public:
-    elf_header_impl( endianess_convertor* convertor_,
+    elf_header_impl( endianness_convertor* convertor_,
                      unsigned char encoding )
     {
         convertor = convertor_;
@@ -138,7 +138,7 @@ template< class T > class elf_header_impl : public elf_header
 
   private:
     T header;
-    endianess_convertor* convertor;
+    endianness_convertor* convertor;
 };
 
 } // namespace ELFIO

@@ -142,7 +142,7 @@ class dynamic_section_accessor
                            Elf_Xword& tag,
                            Elf_Xword& value ) const
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         // Check unusual case when dynamic section has no data
         if( dynamic_section->get_data() == 0 ||
@@ -205,7 +205,7 @@ class dynamic_section_accessor
     void
     generic_add_entry( Elf_Xword tag, Elf_Xword value )
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         T entry;
 

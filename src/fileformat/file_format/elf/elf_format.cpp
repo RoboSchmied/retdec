@@ -2313,7 +2313,7 @@ void ElfFormat::loadNoteSecSeg(ElfNoteSecSeg& notes) const
 		return;
 	}
 
-	const auto endianess = getEndianness();
+	const auto endianness = getEndianness();
 	// Specification for 64-bit files claims that entry size should be 8 bytes
 	// but every 64-bit ELF file analyzed had only 4 byte long entries.
 	const auto entrySize = 4;
@@ -2323,7 +2323,7 @@ void ElfFormat::loadNoteSecSeg(ElfNoteSecSeg& notes) const
 	while(currOff < maxOff)
 	{
 		std::uint64_t nameSize = 0;
-		if(!getXByteOffset(currOff, entrySize, nameSize, endianess))
+		if(!getXByteOffset(currOff, entrySize, nameSize, endianness))
 		{
 			notes.setMalformed("could not read note owner size");
 			break;
@@ -2331,7 +2331,7 @@ void ElfFormat::loadNoteSecSeg(ElfNoteSecSeg& notes) const
 		currOff += entrySize;
 
 		std::uint64_t descSize = 0;
-		if(!getXByteOffset(currOff, entrySize, descSize, endianess))
+		if(!getXByteOffset(currOff, entrySize, descSize, endianness))
 		{
 			notes.setMalformed("could not read note description size");
 			break;
@@ -2340,7 +2340,7 @@ void ElfFormat::loadNoteSecSeg(ElfNoteSecSeg& notes) const
 
 		// Get note type
 		std::uint64_t type = 0;
-		if(!getXByteOffset(currOff, entrySize, type, endianess))
+		if(!getXByteOffset(currOff, entrySize, type, endianness))
 		{
 			notes.setMalformed("could not read note type");
 			break;

@@ -244,7 +244,7 @@ class elfio
     ELFIO_HEADER_ACCESS_GET_SET( Elf_Half,      section_name_str_index );
 
 //------------------------------------------------------------------------------
-    const endianess_convertor& get_convertor() const
+    const endianness_convertor& get_convertor() const
     {
         return convertor;
     }
@@ -876,7 +876,7 @@ class elfio
     std::istream*         iStream;
     std::vector<section*> sections_;
     std::vector<segment*> segments_;
-    endianess_convertor   convertor;
+    endianness_convertor   convertor;
 
     Elf_Xword current_file_pos;
 };

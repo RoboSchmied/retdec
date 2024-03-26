@@ -71,7 +71,7 @@ class segment_impl : public segment
 {
   public:
 //------------------------------------------------------------------------------
-    segment_impl( endianess_convertor* convertor_, size_t file_length_ ) :
+    segment_impl( endianness_convertor* convertor_, size_t file_length_ ) :
         convertor( convertor_ ), file_length( file_length_ )
     {
         is_offset_set = false;
@@ -259,7 +259,7 @@ class segment_impl : public segment
     char*                 data;
     Elf_Xword             data_size;
     std::vector<Elf_Half> sections;
-    endianess_convertor*  convertor;
+    endianness_convertor*  convertor;
     bool                  is_offset_set;
     size_t                file_length;
 };

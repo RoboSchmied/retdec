@@ -238,7 +238,7 @@ class symbol_section_accessor
                 return false;
             }
 
-            const endianess_convertor& convertor = elf_file.get_convertor();
+            const endianness_convertor& convertor = elf_file.get_convertor();
 
             section* string_section = elf_file.sections[get_string_table_index()];
             string_section_accessor str_reader( string_section );
@@ -265,7 +265,7 @@ class symbol_section_accessor
                         unsigned char info, unsigned char other,
                         Elf_Half shndx )
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         T entry;
         entry.st_name  = convertor( name );

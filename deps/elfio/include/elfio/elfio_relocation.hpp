@@ -340,7 +340,7 @@ class relocation_section_accessor
             relocation_section->get_data_size() ) {
             return;
         }
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         const T* pEntry = reinterpret_cast<const T*>(
                 relocation_section->get_data() +
@@ -367,7 +367,7 @@ class relocation_section_accessor
             relocation_section->get_data_size() ) {
             return;
         }
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         const T* pEntry = reinterpret_cast<const T*>(
                 relocation_section->get_data() +
@@ -396,7 +396,7 @@ class relocation_section_accessor
              relocation_section->get_data_size() ) {
             return;
         }
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         const Elf64_Mips_Rel* pEntry = reinterpret_cast<const Elf64_Mips_Rel*>(
                     relocation_section->get_data() +
@@ -427,7 +427,7 @@ class relocation_section_accessor
              relocation_section->get_data_size() ) {
             return;
         }
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         const Elf64_Mips_Rela* pEntry = reinterpret_cast<const Elf64_Mips_Rela*>(
                     relocation_section->get_data() +
@@ -448,7 +448,7 @@ class relocation_section_accessor
     void
     generic_add_entry( Elf64_Addr offset, Elf_Xword info )
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         T entry;
         entry.r_offset = offset;
@@ -464,7 +464,7 @@ class relocation_section_accessor
     void
     generic_add_entry( Elf64_Addr offset, Elf_Xword info, Elf_Sxword addend )
     {
-        const endianess_convertor& convertor = elf_file.get_convertor();
+        const endianness_convertor& convertor = elf_file.get_convertor();
 
         T entry;
         entry.r_offset = offset;

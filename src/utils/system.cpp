@@ -14,7 +14,7 @@ namespace utils {
 * @brief Finds out if the runtime architecture is little endian.
 */
 bool isLittleEndian() {
-	// We use static variables to compute the endianess only once.
+	// We use static variables to compute the endianness only once.
 	static const short endian_test_pattern = 0x00ff;
 	static const bool little_endian =
 		*(reinterpret_cast<const char*>(&endian_test_pattern)) == '\xff';

@@ -60,10 +60,10 @@ THE SOFTWARE.
 namespace ELFIO {
 
 //------------------------------------------------------------------------------
-class endianess_convertor {
+class endianness_convertor {
   public:
 //------------------------------------------------------------------------------
-    endianess_convertor()
+    endianness_convertor()
     {
         need_conversion = false;
     }

@@ -74,7 +74,7 @@ class section_impl : public section
 {
   public:
 //------------------------------------------------------------------------------
-    section_impl( const endianess_convertor* convertor_, size_t file_length_ ) :
+    section_impl( const endianness_convertor* convertor_, size_t file_length_ ) :
         convertor( convertor_ ), file_length( file_length_ )
     {
         std::fill_n( reinterpret_cast<char*>( &header ), sizeof( header ), '\0' );
@@ -336,7 +336,7 @@ class section_impl : public section
     std::string                name;
     char*                      data;
     Elf_Xword                  data_size;
-    const endianess_convertor* convertor;
+    const endianness_convertor* convertor;
     bool                       is_address_set;
     size_t                     file_length;
 };
